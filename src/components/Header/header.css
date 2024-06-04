@@ -1,0 +1,123 @@
+.navbar1 {
+  /* border: 2px solid; */
+  display: flex;
+  background-color: white;
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   position: fixed;
+   /* position: relative; */
+   margin-left: -100px;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo_section1 {
+  margin-left: 7vw;
+  margin-top: 5px;
+}
+
+.nav_options1 {
+  margin-left: 25vw;
+}
+
+.nav_options1 ul {
+  list-style-type: none;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 0; /* Optional: to remove default padding */
+}
+
+ .nav_options1 ul li a {
+            text-decoration: none; /* Removes the underline from links */
+            color: inherit; /* Optional: inherit the color from the parent element */
+        }
+
+.nav_options1 ul li {
+  display: inline;
+}
+
+.nav_options1 ul li {
+  display: inline;
+  font-weight: 400;
+  margin-right: 80px;
+ }
+
+.nav_options1 ul li:last-child {
+  margin-right: 0;
+}
+
+.nav_icons1 {
+  margin-left: 20vw;
+}
+
+.user_icon1{
+  position: relative;
+}
+
+.profile__actions{
+  display: none;
+  position: absolute;
+  /* top: 50; */
+  margin-top: 12px;
+  background-color: aliceblue;
+  cursor: pointer;
+  padding: 5px 10px 10px 10px;
+
+}
+
+.show__profileActions {
+  display: block;
+  /* border: 1px solid; */
+  cursor: pointer;
+}
+
+.nav_icons1 {
+ 
+  display: flex;
+  align-items: center; 
+}
+.nav_icons1 span {
+    cursor: pointer;
+  display: inline-block; /* Ensures margin works */
+  margin-top: 6px; /* Adjust the value as needed */
+  margin-right: 35px; /* Optional: add space between icons */
+}
+/* Remove margin-right from the last icon */
+.nav_icons1 span:last-child {
+  margin-right: 0;
+}
+
+.hamburger1 img{
+    display: none;
+}
+
+
+.nav_active1{
+    font-weight: 700;
+}
+
+.nav_options1 ul li a.active {
+  font-weight: bold; /* Makes the active link bold */
+}
+
+.nav_options1 ul li:last-child {
+  margin-right: 0;
+}
+
+.heart1,.cart_icon1{
+    position: relative;
+}
+
+.badge1{
+   position: absolute;
+  top: -10px; /* Adjust to position vertically */
+  right: -10px; /* Adjust to position horizontally */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+}

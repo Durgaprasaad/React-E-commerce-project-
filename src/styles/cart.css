@@ -1,0 +1,17 @@
+.table tr td img{
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: cover;
+}
+
+td i{
+    cursor: pointer;
+}
+
+.no-underline {
+  text-decoration: none;
+  color: inherit; /* Optional: This will inherit the color from the parent, ensuring it matches the button text color */
+}
+
+
+

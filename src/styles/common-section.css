@@ -1,0 +1,18 @@
+.common__section {
+    background: url("../assets/images/018c032edc599e92f270cc96e89b46f6.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    filter: brightness(90%);
+}
+
+.common__section h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-top: -50px;
+    font-weight: 800;
+}

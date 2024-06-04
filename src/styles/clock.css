@@ -1,0 +1,24 @@
+.clock {
+  display: flex;
+  align-items: center;
+  margin-top: -40px;
+  gap: 20px;
+}
+
+.clock_data {
+  display: flex;
+  align-items: center;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.clock_data span {
+  font-size: 2rem;
+  margin: 0 10px;
+}
+
+.bottom{
+    margin-top: -10px;
+}

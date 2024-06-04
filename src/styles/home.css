@@ -1,0 +1,137 @@
+.main{
+    display: flex;
+    background-color:rgb(148, 154, 244);
+    height: 60vh;
+    z-index: -0;
+    margin-top: 50px;
+}
+
+.caption h3{
+    font-size: 35px;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.caption button .NavLink {
+  text-decoration: none;
+}
+
+
+.caption button{
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color:lightsteelblue;
+    border: 0.5px solid;
+}
+
+.caption, .mainimg{
+    margin-top: 8vh;
+}
+
+.caption{
+    margin-left: 15vw;
+}
+
+.mainimg{
+    margin-left: 8vw;
+}
+
+
+/* services */
+
+.services {
+  display: flex;
+  /* flex-direction: row; */
+  /* border: 1px solid; */
+ 
+}
+
+.service {
+    /* width: ; */
+    border: 1px solid;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* height: 120px; */
+  border-radius: 10px;
+  width: 350px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-bottom: 20px; /* Adjust spacing between services */
+}
+
+.service_image {
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  margin-right: 10px; /* Adjust spacing between icon and description */
+}
+
+.service_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+}
+
+.service_description h4 {
+  margin: 0; /* Remove default margin */
+}
+
+/* Clock */
+
+.timer_section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(7,24,51)
+}
+
+.content_section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  /* margin-top: -50px; */
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.image_section img {
+  max-width: 100%;
+  height: 300px;
+}
+
+.btnn {
+  margin-top: -20px;
+  /* border: 0.2px solid; */
+}
+
+.btnn button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  font-weight: 400;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btnn button:hover {
+  background-color: #0056b3;
+}
+
+.qualityChair{
+  margin-top: -15px;
+}
+
+
+

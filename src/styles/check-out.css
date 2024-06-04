@@ -1,0 +1,29 @@
+.checkout__cart h6,h4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkout__cart{
+    padding: 20px;
+    background-color: rgb(8,26,54);
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.checkout__cart h6{
+    margin-bottom: 20px;
+}
+
+.checkout__cart h4{
+    border-top: 1px solid rgba(221, 221, 221, 0.253);
+    padding-top: 20px;
+}
+/* 
+.buy__btn{
+    background-color: #fff !important;
+    color: black !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+} */
