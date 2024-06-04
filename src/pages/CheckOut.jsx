@@ -3,7 +3,9 @@ import CommonSection from '../UI/CommonSection';
 import { Container, Row, Col, FormGroup } from 'reactstrap';
 import "../styles/check-out.css";
 import { useSelector } from 'react-redux';
-import axios from 'axios';
+
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 const CheckOut = () => {
   const totalQty = useSelector(state => state.cart.totalQuantity);
@@ -19,67 +21,55 @@ const CheckOut = () => {
     country: ''
   });
 
+  const MySwal = withReactContent(Swal);
+
+  const handleClick = () => {
+    MySwal.fire({
+      title: <p>Zero Items Added!</p>,
+      text: 'Cannot Integrate Payment without any cart value ',
+      icon: 'error',
+      confirmButtonText: 'Ok'
+    });
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handlePayment = async () => {
-    const orderUrl = 'http://localhost:5000/create-order';
-    try {
-      const { data } = await axios.post(orderUrl, {
-        amount: totalAmount * 100, // Amount in paise
-        currency: 'INR',
-        receipt: `receipt_${Math.random() * 1000}`
-      });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-      if (!window.Razorpay) {
-        console.error('Razorpay SDK not loaded');
-        alert('Razorpay SDK not loaded');
-        return;
-      }
-
-      const options = {
-        key: 'rzp_test_aAqbgOsB3SYfNx',
-        amount: data.amount,
-        currency: data.currency,
-        name: 'Prasad PVT LTD.',
-        description: 'Test Transaction',
-        order_id: data.id,
-        handler: async (response) => {
-          const paymentId = response.razorpay_payment_id;
-          const orderId = response.razorpay_order_id;
-          const signature = response.razorpay_signature;
-
-          const verifyUrl = 'http://localhost:5000/verify-payment';
-          const { data: verifyResponse } = await axios.post(verifyUrl, {
-            razorpay_order_id: orderId,
-            razorpay_payment_id: paymentId,
-            razorpay_signature: signature
-          });
-
-          if (verifyResponse.status === 'success') {
-            alert('Payment successful');
-          } else {
-            alert('Payment verification failed');
-          }
-        },
-        prefill: {
-          name: form.name,
-          email: form.email,
-          contact: form.phone
-        },
-        theme: {
-          color: '#3399cc'
-        }
-      };
-
-      const rzp1 = new window.Razorpay(options);
-      rzp1.open();
-    } catch (error) {
-      console.error("Payment Error: ", error);
-      alert('Payment failed, please try again.');
+    if (totalAmount === 0 || totalAmount === "0") {
+      handleClick();  // Ensure handleClick is called correctly
+      return;
     }
+
+    const options = {
+      key: 'rzp_test_aAqbgOsB3SYfNx',
+      key_secret: 'S85bHs9ne3cHkyOQRwurdh8l',
+      amount: totalAmount * 100,
+      currency: 'INR',
+      name: 'Durga Prasad PVT LTD.',
+      description: 'testing purpose',
+      handler: function (response) {
+        alert(response.razorpay_payment_id);
+      },
+      prefill: {
+        name: 'durga prasad',
+        email: 'pailladurgaprasad@gmail.com',
+        contact: '9618272085'
+      },
+      notes: {
+        address: 'Razorpay corporate office'
+      },
+      theme: {
+        color: '#141172'
+      }
+    };
+
+    const pay = new window.Razorpay(options);
+    pay.open();
   };
 
   return (
@@ -162,7 +152,7 @@ const CheckOut = () => {
               <h6>Subtotal: <span>${totalAmount}</span></h6>
               <h6><span>Shipping: <br /> Free Shipping</span> <span>$0</span></h6>
               <h4>Total Cost: <span>${totalAmount}</span></h4>
-              <button className='buy__btn auth__btn w-100' onClick={handlePayment}>
+              <button className='buy__btn auth__btn w-100' onClick={handleSubmit}>
                 Place an order
               </button>
             </div>

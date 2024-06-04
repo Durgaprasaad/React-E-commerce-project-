@@ -91,7 +91,6 @@ const Header = () => {
               <span className='badge1'>{totalQuantity}</span>
             </span>
 
-            
             <div className='user_icon1' >
               <motion.img onClick={toggleProfileActions} whileTap={{ scale: 1.1 }} src={currentUser ? currentUser.photoURL : userIcon} height={30} alt="" />
               
@@ -105,8 +104,6 @@ const Header = () => {
                   </div>
                 }
               </div>
-
-
             </div>
             <span className='hamburger1'><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png" height={30} alt="" /></span>
           </div>
