@@ -56,6 +56,7 @@ const Header = () => {
 
   const toggleProfileActions = () => profileActionRef.current.classList.toggle('show__profileActions')
 
+  console.log(userIcon)
 
   return <header>
     <Container>
@@ -93,14 +94,14 @@ const Header = () => {
             
             <div className='user_icon1' >
               <motion.img onClick={toggleProfileActions} whileTap={{ scale: 1.1 }} src={currentUser ? currentUser.photoURL : userIcon} height={30} alt="" />
-
+              
               <div className="profile__actions" ref={profileActionRef} onClick={toggleProfileActions}>
                 {
                   currentUser ? <span onClick={logout}>Logout</span> 
-                  :
+                  : 
                   <div className='d-flex align-items-center justify-content-center flex-column'>
                     <Link to='/signup' style={{ textDecoration: 'none' } }>Signup</Link>
-                      <Link to='/login' style={{ textDecoration: 'none' } }>login</Link>
+                    <Link to='/login'  style={{ textDecoration: 'none' } }>login</Link>
                   </div>
                 }
               </div>
